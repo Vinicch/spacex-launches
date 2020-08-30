@@ -1,7 +1,9 @@
+# Introduction
+
 This is a project that shows the SpaceX launches stats since its inception,
 using the SpaceX API available in the [documentation site](https://docs.spacexdata.com/)
 
-# Scripts
+## Scripts
 
 In each of the two starting folders, you can run `yarn install` to install their dependencies.
 
