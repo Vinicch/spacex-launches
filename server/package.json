@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {
-    "client": "cd ../client && yarn start",
-    "server": "nodemon index.js",
-    "dev": "concurrently \"yarn client\" \"yarn server\"",
-    "start": "node index.js"
-  },
   "dependencies": {
     "apollo-server-express": "^2.17.0",
     "axios": "^0.20.0",
