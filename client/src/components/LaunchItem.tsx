@@ -2,7 +2,16 @@ import React from 'react'
 import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
 
-const LaunchItem = ({ launch: { flight_number, mission_name, launch_date_local, launch_success } }) => {
+interface Props {
+  launch: {
+    flight_number: number
+    mission_name: string
+    launch_date_local: string
+    launch_success: string
+  }
+}
+
+const LaunchItem = ({ launch: { flight_number, mission_name, launch_date_local, launch_success } }: Props) => {
   return (
     <div className="card card-body mb-3">
       <div className="row">

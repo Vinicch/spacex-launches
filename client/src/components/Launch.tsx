@@ -1,6 +1,6 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
-import { Link } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 
 const launchQuery = gql`
   query($flight_number: Int!) {
@@ -19,8 +19,8 @@ const launchQuery = gql`
   }
 `
 
-const Launch = (props) => {
-  let { flight_number } = props.match.params
+const Launch = (props: RouteComponentProps) => {
+  let { flight_number }: any = props.match.params
   flight_number = parseInt(flight_number)
 
   const { loading, error, data } = useQuery(launchQuery, { variables: { flight_number } })
@@ -51,8 +51,10 @@ const Launch = (props) => {
         <li className="list-group-item">Rocket Name: {data.launch.rocket.rocket_name}</li>
         <li className="list-group-item">Rocket Type: {data.launch.rocket.rocket_type}</li>
       </ul>
-      <hr/>
-      <Link to="/" className="btn btn-secondary">Back</Link>
+      <hr />
+      <Link to="/" className="btn btn-secondary">
+        Back
+      </Link>
     </div>
   )
 }

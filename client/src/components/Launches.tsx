@@ -24,7 +24,7 @@ const Launches = () => {
     <>
       <h1 className="display-4 my-3">Launches</h1>
       <MissionKey />
-      {data.launches.map((launch) => (
+      {data.launches.map((launch: any) => (
         <LaunchItem key={launch.flight_number} launch={launch} />
       ))}
     </>
