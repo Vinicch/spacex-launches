@@ -6,7 +6,7 @@ import Launch from './components/Launch'
 import logo from './logo.png'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'http://localhost:4000/query',
   cache: new InMemoryCache(),
 })
 
