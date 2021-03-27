@@ -26,7 +26,7 @@ func main() {
 	mux.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	mux.Handle("/query", srv)
 
-	origins := []string{"http://localhost:3000"}
+	origins := []string{"http://localhost:8080"}
 	handler := cors.New(cors.Options{AllowedOrigins: origins}).Handler(mux)
 
 	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
