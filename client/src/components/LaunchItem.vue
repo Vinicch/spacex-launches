@@ -15,19 +15,18 @@
         <p>Date: {{ launchDate }}</p>
       </div>
       <div class="col-md-3">
-        <a class="btn btn-secondary" @click.prevent="showLaunch"
-          >Launch Details</a
-        >
+        <router-link :to="{ path: `/launch/${flight_number}` }">
+          Launch Details
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   props: {
     flight_number: {
       type: Number,
@@ -47,20 +46,13 @@ export default {
     },
   },
   setup(props) {
-    const router = useRouter()
-
     let launchDate = computed(() =>
       new Date(props.launch_date_local).toLocaleString(),
     )
 
-    const showLaunch = () => {
-      router.push(`/launch/${props.flight_number}`)
-    }
-
     return {
       launchDate,
-      showLaunch,
     }
   },
-}
+})
 </script>

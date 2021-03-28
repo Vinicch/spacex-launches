@@ -17,6 +17,7 @@ import MissionKey from '@/components/MissionKey.vue'
 import LaunchItem from '@/components/LaunchItem.vue'
 import { useQuery } from '@vue/apollo-composable'
 import { gql } from '@apollo/client/core'
+import { defineComponent } from 'vue'
 
 const launchesQuery = gql`
   query {
@@ -29,7 +30,7 @@ const launchesQuery = gql`
   }
 `
 
-export default {
+export default defineComponent({
   components: {
     MissionKey,
     LaunchItem,
@@ -43,5 +44,5 @@ export default {
       result,
     }
   },
-}
+})
 </script>

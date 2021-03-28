@@ -44,8 +44,9 @@
 
 <script lang="ts">
 import { gql } from '@apollo/client/core'
-import { useRoute } from 'vue-router'
 import { useQuery } from '@vue/apollo-composable'
+import { defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
 
 const launchQuery = gql`
   query($flight_number: Int!) {
@@ -64,7 +65,7 @@ const launchQuery = gql`
   }
 `
 
-export default {
+export default defineComponent({
   setup() {
     const route = useRoute()
     const flight_number = parseInt(route.params.flight_number as string)
@@ -76,5 +77,5 @@ export default {
       result,
     }
   },
-}
+})
 </script>
