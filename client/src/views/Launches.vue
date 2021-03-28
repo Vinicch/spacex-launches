@@ -7,7 +7,10 @@
     <LaunchItem
       v-for="launch in result.launches"
       :key="launch.flight_number"
-      v-bind="launch"
+      :flight-number="launch.flight_number"
+      :mission-name="launch.mission_name"
+      :launch-date-local="launch.launch_date_local"
+      :launch-success="launch.launch_success"
     />
   </template>
 </template>

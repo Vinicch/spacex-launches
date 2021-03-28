@@ -6,16 +6,16 @@
           Mission:
           <span
             :class="{
-              'text-success': launch_success,
-              'text-danger': !launch_success,
+              'text-success': launchSuccess,
+              'text-danger': !launchSuccess,
             }"
-            >{{ mission_name }}</span
+            >{{ missionName }}</span
           >
         </h4>
         <p>Date: {{ launchDate }}</p>
       </div>
       <div class="col-md-3">
-        <router-link :to="{ path: `/launch/${flight_number}` }">
+        <router-link :to="{ path: `/launch/${flightNumber}` }">
           Launch Details
         </router-link>
       </div>
@@ -28,26 +28,26 @@ import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    flight_number: {
+    flightNumber: {
       type: Number,
       default: 0,
     },
-    mission_name: {
+    missionName: {
       type: String,
       default: '',
     },
-    launch_date_local: {
+    launchDateLocal: {
       type: String,
       default: '',
     },
-    launch_success: {
+    launchSuccess: {
       type: Boolean,
       default: false,
     },
   },
   setup(props) {
     let launchDate = computed(() =>
-      new Date(props.launch_date_local).toLocaleString(),
+      new Date(props.launchDateLocal).toLocaleString(),
     )
 
     return {

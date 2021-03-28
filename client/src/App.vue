@@ -12,9 +12,10 @@ import {
   InMemoryCache,
 } from '@apollo/client/core'
 import { provideApolloClient } from '@vue/apollo-composable'
+import { defineComponent } from 'vue'
 
-export default {
-  setup(): void {
+export default defineComponent({
+  setup() {
     const client = new ApolloClient({
       cache: new InMemoryCache(),
       link: createHttpLink({ uri: 'http://localhost:4000/query' }),
@@ -22,7 +23,7 @@ export default {
 
     provideApolloClient(client)
   },
-}
+})
 </script>
 
 <style lang="scss">
